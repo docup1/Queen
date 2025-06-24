@@ -86,7 +86,7 @@ const AboutSection = () => {
                         <div className="info-card">
                             <h3 className="info-title">ИСТОРИЧЕСКИЙ УСПЕХ</h3>
                             <p className="info-text">
-                                Альбом *A Night at the Opera* (1975) стал прорывом: сложная структура,
+                                Альбом «A Night at the Opera» (1975) стал прорывом: сложная структура,
                                 драматизм и «Bohemian Rhapsody» — песня, которая нарушила все правила».
                                 Радиостанции сначала отказывались её крутить, но публика влюбилась мгновенно.
                             </p>
