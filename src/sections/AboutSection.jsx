@@ -19,7 +19,7 @@ const AboutSection = () => {
                         </p>
 
                         <p className="about-paragraph secondary">
-                            От оперного размаха "Bohemian Rhapsody" до стадионного гимна "We Will Rock You" —
+                            От оперного размаха «Bohemian Rhapsody» до стадионного гимна «We Will Rock You» —
                             каждая песня была актом творческого
                             <span className="highlight-purple">бунта</span> против
                             музыкальных условностей.
@@ -53,7 +53,7 @@ const AboutSection = () => {
 
                         <div className="quote-block">
                             <p className="quote-text">
-                                "Я хочу, чтобы люди знали, что мы не боимся экспериментировать"
+                                «Я хочу, чтобы люди знали, что мы не боимся экспериментировать
                             </p>
                             <p className="quote-author">— Фредди Меркьюри</p>
                         </div>
@@ -87,7 +87,7 @@ const AboutSection = () => {
                             <h3 className="info-title">ИСТОРИЧЕСКИЙ УСПЕХ</h3>
                             <p className="info-text">
                                 Альбом *A Night at the Opera* (1975) стал прорывом: сложная структура,
-                                драматизм и «Bohemian Rhapsody» — песня, которая нарушила все правила.
+                                драматизм и «Bohemian Rhapsody» — песня, которая нарушила все правила».
                                 Радиостанции сначала отказывались её крутить, но публика влюбилась мгновенно.
                             </p>
                         </div>
