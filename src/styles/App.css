@@ -1187,3 +1187,149 @@ body {
   text-align: right;
   margin-top: 0.5rem;
 }
+/* Корона на фоне */
+.crown-background {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 240px;
+  z-index: 1;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.crown-svg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.3));
+  animation: crownPulse 4s ease-in-out infinite alternate;
+}
+
+@keyframes crownPulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+}
+
+/* Контейнер для частиц */
+.particles-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Частицы */
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.8) 0%, rgba(255, 215, 0, 0.2) 50%, transparent 100%);
+  border-radius: 50%;
+  animation: particleFloat linear infinite;
+  pointer-events: none;
+}
+
+.particle:nth-child(2n) {
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.1) 50%, transparent 100%);
+  width: 3px;
+  height: 3px;
+}
+
+.particle:nth-child(3n) {
+  background: radial-gradient(circle, rgba(255, 0, 100, 0.5) 0%, rgba(255, 0, 100, 0.1) 50%, transparent 100%);
+  width: 2px;
+  height: 2px;
+}
+
+.particle:nth-child(4n) {
+  background: radial-gradient(circle, rgba(0, 255, 255, 0.4) 0%, rgba(0, 255, 255, 0.1) 50%, transparent 100%);
+  width: 5px;
+  height: 5px;
+}
+
+@keyframes particleFloat {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Дополнительные стили для улучшения атмосферы */
+.header {
+  position: relative;
+  overflow: hidden;
+}
+
+.header-content {
+  position: relative;
+  z-index: 10;
+}
+
+
+
+@keyframes titleGlow {
+  0% {
+    text-shadow:
+            0 0 10px rgba(255, 215, 0, 0.5),
+            0 0 20px rgba(255, 215, 0, 0.3),
+            0 0 30px rgba(255, 215, 0, 0.2);
+  }
+  100% {
+    text-shadow:
+            0 0 20px rgba(255, 215, 0, 0.8),
+            0 0 30px rgba(255, 215, 0, 0.6),
+            0 0 40px rgba(255, 215, 0, 0.4);
+  }
+}
+
+/* Добавляем градиентный фон */
+.header-background::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(ellipse at center, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
+  z-index: 1;
+}
+
+/* Анимация для членов группы */
+.members {
+  position: relative;
+  z-index: 10;
+  animation: fadeInUp 2s ease-out 1s both;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

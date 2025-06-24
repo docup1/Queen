@@ -12,7 +12,7 @@ const AboutSection = () => {
                     <div className="about-text">
                         <p className="about-paragraph">
                             Четыре человека изменили мир музыки навсегда.
-                            <span className="highlight-yellow"> Queen</span> —
+                            <span className="highlight-yellow"><br/>Queen</span> —
                             это не просто группа, это
                             <span className="highlight-red"> революция</span>,
                             облачённая в звук.
