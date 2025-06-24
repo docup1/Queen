@@ -59,14 +59,14 @@ const App = () => {
         />
 
         <Header mousePosition={mousePosition} />
-
+          <TimelineSection />
         <AboutSection />
         <AchievementsSection/>
         <SongsSection
             songs={songsData}
             onSongClick={handleSongClick}
         />
-          <TimelineSection />
+
         <LegacySection />
 
         <Footer />
