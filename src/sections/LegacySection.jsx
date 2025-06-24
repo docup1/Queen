@@ -31,7 +31,7 @@ const LegacySection = () => {
 
                     <div className="legacy-quote">
                         <p className="final-quote">
-                            "Шоу должно продолжаться..."
+                            «Шоу должно продолжаться...»
                         </p>
                     </div>
                 </div>
