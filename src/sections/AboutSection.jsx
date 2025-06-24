@@ -53,7 +53,7 @@ const AboutSection = () => {
 
                         <div className="quote-block">
                             <p className="quote-text">
-                                «Я хочу, чтобы люди знали, что мы не боимся экспериментировать
+                                «Я хочу, чтобы люди знали, что мы не боимся экспериментировать»
                             </p>
                             <p className="quote-author">— Фредди Меркьюри</p>
                         </div>
