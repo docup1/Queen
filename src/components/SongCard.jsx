@@ -1,3 +1,4 @@
+// SongCard.js (обновленный)
 import React from 'react';
 
 const SongCard = ({ song, onClick }) => {
@@ -6,7 +7,7 @@ const SongCard = ({ song, onClick }) => {
     };
 
     return (
-        <div className="song-card" onClick={onClick}>
+        <div className="song-card" onClick={() => onClick(song)}>
             <div className="song-header">
                 <h3 className={getEmotionClass(song.emotion)}>
                     {song.title}

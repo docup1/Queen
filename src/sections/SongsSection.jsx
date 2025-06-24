@@ -1,7 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import SongCard from '../components/SongCard';
+import SongModal from '../components/SongModal';
 
-const SongsSection = ({ songs, onSongClick }) => {
+const SongsSection = ({ songs }) => {
+    const [selectedSong, setSelectedSong] = useState(null);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const handleSongClick = (song) => {
+        setSelectedSong(song);
+        setIsModalOpen(true);
+    };
+
+    const handleCloseModal = () => {
+        setIsModalOpen(false);
+        setSelectedSong(null);
+    };
+
     return (
         <section className="songs-section">
             <div className="container">
@@ -14,11 +28,17 @@ const SongsSection = ({ songs, onSongClick }) => {
                         <SongCard
                             key={index}
                             song={song}
-                            onClick={() => onSongClick(song)}
+                            onClick={handleSongClick}
                         />
                     ))}
                 </div>
             </div>
+
+            <SongModal
+                song={selectedSong}
+                isOpen={isModalOpen}
+                onClose={handleCloseModal}
+            />
         </section>
     );
 };

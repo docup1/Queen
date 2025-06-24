@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import SongsSection from "../sections/SongsSection";
 
 const TypewriterText = ({ text, speed = 100 }) => {
     const [displayText, setDisplayText] = useState('');

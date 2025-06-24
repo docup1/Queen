@@ -8,6 +8,8 @@ import LyricsModal from './components/LyricsModal';
 import MouseCursor from './components/MouseCursor';
 import { songsData } from './data/songsData';
 import './styles/App.css';
+import TimelineSection from "./sections/TimelineSection";
+import AchievementsSection from "./sections/AchievementsSection";
 
 const App = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -59,12 +61,12 @@ const App = () => {
         <Header mousePosition={mousePosition} />
 
         <AboutSection />
-
+        <AchievementsSection/>
         <SongsSection
             songs={songsData}
             onSongClick={handleSongClick}
         />
-
+          <TimelineSection />
         <LegacySection />
 
         <Footer />
