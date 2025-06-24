@@ -16,7 +16,7 @@ const TimelineSection = ({ mousePosition }) => {
         {
             year: 1973,
             title: "ПЕРВЫЙ АЛЬБОМ",
-            description: "Выход дебютного альбома 'Queen'",
+            description: "Выход дебютного альбома Queen",
             color: "yellow",
             icon: "🎵"
         },
