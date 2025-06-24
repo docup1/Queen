@@ -631,6 +631,7 @@ body {
 }
 
 .final-quote {
+  padding-top: 2.5rem;
   font-size: 2rem;
   font-weight: 300;
   font-style: italic;
