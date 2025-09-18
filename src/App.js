@@ -9,7 +9,6 @@ import MouseCursor from './components/MouseCursor';
 import { songsData } from './data/songsData';
 import './styles/App.css';
 import TimelineSection from "./sections/TimelineSection";
-import AchievementsSection from "./sections/AchievementsSection";
 
 const App = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
