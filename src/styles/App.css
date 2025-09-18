@@ -1,19 +1,110 @@
 /* styles/App.css - Основные стили приложения */
 
 /* === БАЗОВЫЕ СТИЛИ === */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* ===== Основные переменные ===== */
+:root {
+  --queen-bg: #1e1b3a;
+  --queen-accent: #f2c94c;
+  --queen-secondary: #9b51e0;
+  --queen-text: #f8f8f8;
+  --queen-radius: 16px;
+  --queen-transition: 0.3s ease;
 }
 
+/* ===== Общий фон и шрифт ===== */
 body {
-  font-family: 'Arial', 'Helvetica', sans-serif;
-  background: #000;
-  color: #fff;
-  overflow-x: hidden;
-  line-height: 1.6;
+  background-color: var(--queen-bg);
+  color: var(--queen-text);
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
 }
+
+/* ===== Контейнеры ===== */
+.section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 1rem;
+}
+
+/* ===== Заголовки ===== */
+h1, h2, h3 {
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--queen-accent);
+  margin-bottom: 1rem;
+}
+
+/* ===== Карточки ===== */
+.card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--queen-radius);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  transition: transform var(--queen-transition), box-shadow var(--queen-transition);
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+/* ===== Кнопки ===== */
+.button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(45deg, var(--queen-secondary), var(--queen-accent));
+  color: #fff;
+  border: none;
+  border-radius: var(--queen-radius);
+  text-transform: uppercase;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity var(--queen-transition), transform var(--queen-transition);
+}
+.button:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
+}
+
+/* ===== Подробнее (раскрытие текста) ===== */
+.details {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+}
+.details.open {
+  max-height: 500px; /* или auto через JS */
+  opacity: 1;
+}
+
+/* ===== Анимации ===== */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.fade-up {
+  animation: fadeUp 0.6s ease forwards;
+}
+
+/* ===== Медиазапросы ===== */
+@media (max-width: 768px) {
+  .card {
+    padding: 1rem;
+  }
+  .button {
+    width: 100%;
+    text-align: center;
+  }
+}
+
 
 .app {
   min-height: 100vh;

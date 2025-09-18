@@ -2,7 +2,7 @@ export const songsData = [
     {
         title: "Bohemian Rhapsody",
         year: "1975",
-        emotion: "epic",
+        emotion: "melancholy",
         preview: "Is this the real life? Is this just fantasy?",
         lyrics: `
 Это настоящая жизнь? Или просто фантазия?

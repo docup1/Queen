@@ -1,0 +1,123 @@
+/* ======================================================================
+   CSS файл (TimelineQueen.css) — в том же каталоге. Ниже — полный CSS.
+   ====================================================================== */
+
+/* TimelineQueen.css */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Montserrat:wght@300;600;800&display=swap');
+
+:root{
+    --gold: #f1c40f;
+    --deep-purple: #2b0b4a;
+    --royal-red: #b91c1c;
+    --velvet: #12020b;
+    --muted-white: #eaeaea;
+}
+
+.timeline-queen-section{
+    position: relative;
+    padding: 5.5rem 0 8rem 0;
+    background: radial-gradient(800px 400px at 10% 10%, rgba(177,122,255,0.04), transparent 12%),
+    linear-gradient(180deg, rgba(6,3,12,0.98), rgba(14,6,20,0.99));
+    color: var(--muted-white);
+    overflow: hidden;
+    font-family: 'Montserrat', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+
+.crown-background{ position:absolute; inset:auto 0 60% 50%; width:760px; height:420px; transform:translateX(-50%); opacity:0.12; z-index:1; pointer-events:none }
+.crown-svg{ filter: drop-shadow(0 10px 40px rgba(241,196,15,0.08)); }
+
+.section-title{ font-family: 'Cinzel', serif; font-size:2.6rem; font-weight:900; text-align:center; margin-bottom:0.35rem; z-index:5; position:relative }
+.subtitle-hero{ display:block; font-size:1rem; font-weight:300; opacity:0.9; margin-top:0.45rem }
+.gradient-text-timeline{ background: linear-gradient(45deg, #ffeaa7, #f1c40f); -webkit-background-clip:text; -webkit-text-fill-color:transparent }
+
+.timeline-container{
+    position: relative;
+    max-width:1100px;
+    margin: 1.6rem auto 0 auto;
+    padding: 2rem 1rem;
+    transition: transform 0.12s ease-out;
+    z-index: 5;
+}
+
+.timeline-line{ position:absolute; left:50%; top:24px; bottom:24px; width:6px; background:linear-gradient(to bottom, #8b5cf6, var(--gold), #ef4444); transform:translateX(-50%); border-radius:6px; box-shadow:0 0 30px rgba(139,92,246,0.12); }
+
+.timeline-event{ position:relative; display:flex; align-items:flex-start; gap:1.8rem; margin:2.8rem 0; cursor:pointer; transition:all 0.45s cubic-bezier(.2,.9,.2,1); }
+.timeline-event:nth-child(odd){ flex-direction:row; }
+.timeline-event:nth-child(even){ flex-direction:row-reverse }
+
+.timeline-pin{ position:relative; width:220px; min-width:180px; display:flex; flex-direction:column; align-items:center; }
+.timeline-year{ background:linear-gradient(180deg, rgba(0,0,0,0.75), rgba(0,0,0,0.6)); color:var(--gold); padding:0.45rem 0.9rem; border-radius:999px; font-weight:900; border:2px solid rgba(241,196,15,0.12); font-size:1.05rem; box-shadow:0 8px 22px rgba(0,0,0,0.7) }
+.timeline-icon{ margin-top:0.7rem; width:64px; height:64px; display:flex; align-items:center; justify-content:center; font-size:1.8rem; background:linear-gradient(135deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border-radius:50%; border:2px solid rgba(139,92,246,0.14) }
+
+.timeline-content{ background:linear-gradient(135deg, rgba(139,92,246,0.06), rgba(239,68,68,0.03)); padding:1.6rem; border-radius:14px; backdrop-filter: blur(6px); flex:1; max-width:720px; box-shadow:0 12px 40px rgba(0,0,0,0.7); transform-origin:left center; }
+.timeline-event.active .timeline-content{ transform:scale(1.035); box-shadow:0 24px 80px rgba(241,196,15,0.09); }
+
+.timeline-title{ font-family:'Cinzel', serif; font-size:1.45rem; font-weight:900; color:var(--gold); margin-bottom:0.25rem }
+.timeline-subtitle{ font-size:1rem; color:#fff6c8; opacity:0.95; margin-bottom:0.6rem; font-weight:600 }
+.timeline-description{ font-size:1rem; color:#e9e9e9; line-height:1.7; max-height:4.6rem; overflow:hidden; transition:max-height 0.45s ease }
+.timeline-description.expanded{ max-height:100vh }
+
+.timeline-actions{ margin-top:0.9rem; display:flex; gap:0.6rem; justify-content:flex-end }
+.btn-readmore, .btn-toggle, .btn-clear{ background:transparent; border:1px solid rgba(255,255,255,0.06); padding:0.45rem 0.9rem; border-radius:8px; font-weight:700; cursor:pointer }
+.btn-readmore{ color:var(--gold); border-color:rgba(241,196,15,0.18); box-shadow:inset 0 -2px 0 rgba(0,0,0,0.2) }
+.btn-toggle{ color:#fff; opacity:0.9 }
+.btn-clear{ color:#fff; opacity:0.7 }
+.btn-readmore:hover{ transform:translateY(-2px); }
+
+.sparkles{ position:absolute; right:-38px; top:-6px; display:flex; gap:8px; pointer-events:none }
+.spark{ width:6px; height:6px; border-radius:50%; background:radial-gradient(circle, var(--gold) 0%, rgba(255,255,255,0.2) 40%, transparent 100%); box-shadow:0 0 18px rgba(241,196,15,0.9); transform:translateY(0); opacity:0; transition: all 0.6s ease }
+.sparkles.active .spark{ opacity:1; transform:translateY(-8px) rotate(6deg) }
+
+/* модификаторы цветов */
+.timeline-purple .timeline-icon{ border-color: rgba(139,92,246,0.36) }
+.timeline-yellow .timeline-icon{ border-color: rgba(241,196,15,0.36) }
+.timeline-red .timeline-icon{ border-color: rgba(239,68,68,0.36) }
+.timeline-blue .timeline-icon{ border-color: rgba(59,130,246,0.36) }
+
+/* ARCHIVE */
+.timeline-archive{ margin-top:2.2rem; max-width:1100px; margin-left:auto; margin-right:auto; z-index:6 }
+.archive-controls{ display:flex; justify-content:space-between; align-items:center; gap:1rem; margin-bottom:1rem }
+.archive-count{ color:#f3e7b1; font-weight:700 }
+.archive-list{ display:grid; gap:1rem }
+.archive-empty{ text-align:center; color:#bfbab0; padding:1.2rem; border-radius:10px; background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.03)) }
+
+.archive-card{ position:relative; background:linear-gradient(135deg, rgba(255,255,255,0.02), rgba(0,0,0,0.03)); border-radius:12px; padding:1rem 1rem 1.1rem 1rem; border:1px solid rgba(255,255,255,0.03); box-shadow:0 12px 30px rgba(0,0,0,0.6); animation:appendIn 0.48s ease both }
+.archive-remove{ position:absolute; right:10px; top:10px; background:transparent; border:none; color:#fff; opacity:0.6; cursor:pointer; font-size:1.05rem }
+.archive-title{ font-family:'Cinzel', serif; font-size:1.15rem; color:var(--gold); margin:0 }
+.archive-year{ margin-left:0.8rem; font-weight:700; color:#fff7d6; opacity:0.85 }
+.archive-sub{ font-size:0.92rem; color:#f7eabd; opacity:0.9; margin-top:0.25rem }
+.archive-body{ margin-top:0.8rem; color:#eee; line-height:1.7 }
+
+.legacy-block{ margin-top:0.8rem; background: rgba(255,255,255,0.02); padding:0.7rem; border-radius:8px }
+.legacy-label{ font-weight:800; color:var(--gold); margin-bottom:0.25rem }
+.legacy-value{ color:#e9e9e9; font-size:0.95rem }
+
+@keyframes appendIn{ from { transform: translateY(8px) scale(0.98); opacity:0 } to { transform: translateY(0) scale(1); opacity:1 } }
+
+/* particles */
+.particles-container{ position:absolute; inset:0; pointer-events:none; z-index:2 }
+.particle{ position:absolute; width:6px; height:6px; border-radius:50%; opacity:0; transform:translateY(0); animation:particleFloat 6s linear infinite; }
+.p-0{ left:4%; animation-delay:0s; top:90% }
+.p-1{ left:12%; animation-delay:0.4s; top:92% }
+.p-2{ left:20%; animation-delay:0.8s; top:88% }
+.p-3{ left:28%; animation-delay:1.2s; top:91% }
+.p-4{ left:36%; animation-delay:1.6s; top:93% }
+.p-5{ left:44%; animation-delay:2s; top:90% }
+.p-6{ left:52%; animation-delay:2.4s; top:92% }
+.p-7{ left:60%; animation-delay:2.8s; top:89% }
+.p-8{ left:68%; animation-delay:3.2s; top:91% }
+.p-9{ left:76%; animation-delay:3.6s; top:94% }
+.p-10{ left:84%; animation-delay:4s; top:90% }
+.p-11{ left:92%; animation-delay:4.4s; top:92% }
+.p-12{ left:50%; animation-delay:4.8s; top:80% }
+.p-13{ left:30%; animation-delay:5.2s; top:85% }
+.p-14{ left:70%; animation-delay:5.6s; top:84% }
+.p-15{ left:10%; animation-delay:6s; top:86% }
+
+@keyframes particleFloat{ 0%{ transform:translateY(0) scale(0.6); opacity:0 } 10%{ opacity:1 } 50%{ transform:translateY(-40vh) scale(1.0); opacity:0.9 } 100%{ transform:translateY(-100vh) scale(0.3); opacity:0 } }
+
+/* адаптив */
+@media (max-width:900px){ .timeline-container{ padding:1rem } .timeline-pin{ min-width:140px } .timeline-content{ max-width:100% } .section-title{ font-size:1.9rem } }
+@media (max-width:480px){ .timeline-event{ margin:1.6rem 0 } .timeline-year{ font-size:0.95rem } }
+
+/* Конец TimelineQueen.css */
