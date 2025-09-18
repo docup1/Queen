@@ -62,10 +62,7 @@ const App = () => {
           <TimelineSection />
         <AboutSection />
         <AchievementsSection/>
-        <SongsSection
-            songs={songsData}
-            onSongClick={handleSongClick}
-        />
+
 
         <LegacySection />
 
